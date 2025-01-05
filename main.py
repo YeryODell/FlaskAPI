@@ -70,7 +70,7 @@ def get_movie(movie_title):
     responses = get_page_links(soup)
     print(type(responses))
     status_code = 200
-    # check to make sure a dictionar was returned
+    # check to make sure a dictionary was returned
     if responses == {}:
         status_code = 204
 
