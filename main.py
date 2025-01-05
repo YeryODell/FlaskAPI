@@ -68,12 +68,11 @@ def get_movie(movie_title):
     r = requests.get(url=url)
     soup = BeautifulSoup(r.text, 'html.parser')
     responses = get_page_links(soup)
-    responses = jsonify(responses)
+    print(type(responses))
     status_code = 200
     # check to make sure a dictionar was returned
-    if type(responses) != type({}):
+    if responses == {}:
         status_code = 204
-        responses = {}
 
     return responses, status_code
 
